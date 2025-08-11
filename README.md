@@ -23,6 +23,7 @@ Whenever I make changes locally, I upload the updated files again to S3 using th
 Notes:
 
 I didn’t use a custom domain, so the website is accessible only through the CloudFront URL.
+I can easily connect a custom domain to CloudFront later if needed.
 
 I can easily connect a custom domain to CloudFront later if needed.
 
