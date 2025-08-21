@@ -1,29 +1,48 @@
-# Hosting a Static Website using AWS S3 and CloudFront
+# 🌐 Static Website Hosting using AWS S3 + CloudFront + CI/CD
 
-Hello,  
-I uploaded my static website files to Amazon S3 and used CloudFront to distribute the content faster and with better security.
+This project demonstrates how to host a **static website** using **Amazon S3** along with **CloudFront** to accelerate and optimize content delivery.  
+It also includes a **CI/CD pipeline** using **GitHub Actions** to automatically deploy any updates.
 
 ---
 
-## Steps I followed
+## Project Features
+-  **Host files** on Amazon S3.
+-  **Faster content delivery** using Amazon CloudFront.
+-  **Automatic deployment** of any changes via CI/CD.
+-  Option to add **SSL certificates** for better security.
+-  Ability to link the website with a **custom domain** later.
 
-1. **Uploading files to S3**  
-I created a new bucket on AWS S3 and enabled Static Website Hosting.  
-Then, I uploaded all my site files (HTML, CSS, JavaScript, images) to the bucket.  
-I set the proper permissions to make the files publicly accessible.
+---
 
-2. **Creating a CloudFront Distribution**  
-I created a new CloudFront distribution linked to my S3 bucket.  
-I used the URL provided by CloudFront as the website address.  
-CloudFront helped speed up loading times and improve security.
+## Implementation Steps
 
-3. **Updating the site**  
-Whenever I make changes locally, I upload the updated files again to S3 using this command:
+### **1. Create an S3 Bucket and Upload Website Files**
+- Create a new **bucket** in **AWS S3**.
+- Enable **Static Website Hosting**.
+- Upload all your website files (HTML, CSS) into the bucket.
+- Set proper permissions to make the files **publicly accessible**.
 
-Notes:
+---
 
-I didn’t use a custom domain, so the website is accessible only through the CloudFront URL.
-I can easily connect a custom domain to CloudFront later if needed.
+### **2. Configure CloudFront for Content Distribution**
+- Create a new **CloudFront Distribution**.
+- Link it to your **S3 Bucket** as the origin.
+- Get your **CloudFront URL** (e.g.:  
+  `https://d25i.cloudfront.net`)
+- Optionally, you can add **SSL** and link a **custom domain**.
 
-I can easily connect a custom domain to CloudFront later if needed.
+---
 
+### **3. Set Up CI/CD with GitHub Actions**
+A **workflow** is configured so that any code changes will be automatically deployed to **S3** and the **CloudFront cache** will be invalidated.
+
+
+How to Update the Website
+ After making any local changes:
+
+   git add .
+   git commit -m "Update: new changes"
+   git push origin main
+
+
+    https://seifraafat-2.github.io/Aws-s3-cloudfront-1/
